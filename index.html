@@ -10,6 +10,11 @@
         rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" 
         crossorigin="anonymous"
     >    
+    <script
+      src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+      integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+      crossorigin="anonymous"
+    ></script>
     <script src="https://kit.fontawesome.com/4d70f3ad75.js" crossorigin="anonymous"></script>
     <!--css>-->
     <link rel='stylesheet' type='text/css' href='./assets/css/style.css'>
@@ -25,114 +30,111 @@
     <!-- Main container -->
     <div class=' main-container container-fluid'>
         <div class='row'>
-             <!--Search for a city-->
+            <!--Search for a city-->
             <div id="search-section" class="col-md-4">
-                    <div class="card-body">
-                        <h5>Search for a city:</h5>
-                            <form class="form-inline">
-                                <input type="search" placeholder="Enter city name" class="form-control mr-sm-2 input" />
-                                <button class="btn btn-primary my-2 my-sm-0 search search-button" type="submit">
-                                    <i class="fas fa-search-location"></i>
-                                </button>
-                            </form>                
-                        <div class="cities-list"></div>
-                    </div>
+                <div class="card-body">
+                    <h5>Search for a city:</h5>
+                    <form class="form-inline">
+                        <input type="search" placeholder="Enter city name" class="form-control mr-sm-2 input" />
+                        <button class="btn btn-primary my-2 my-sm-0 search search-button" type="submit">
+                            <i class="fas fa-search-location"></i>
+                        </button>
+                    </form>                
+                    <div class="cities-list"></div>
+                </div>
             </div>
          
-             <!--Container for weather columns-->
-                <div class="col-md-8 container-left-columns">
-                    <!--Current city-->
-                    <div class="row">
-                        <div class="card card-city">
-                            <div class="card-body">
-                                <p class="current-date"></p>
-                                <p class="city"></p>
-                                <p class="weather-icon"></p>
-                                <p class="temperature"></p>
-                                <p class="humidity"></p>
-                                <p class="wind"></p>
-                                <p class="uv"></p>
+        <!--Container for weather columns-->
+        <div class="col-md-8 container-left-columns">
+        <!--Current day-->
+            <div class="row">
+                <div class="card card-city">
+                    <div class="card-body">
+                        <p class="city"></p>
+                        <p class="current-date"></p>                                
+                        <p class="weather-icon"></p>
+                        <p class="temperature"></p>
+                        <p class="wind"></p>
+                        <p class="humidity"></p>                                
+                    </div>
+                </div>
+            </div>
+            <!--5 Day Forecast Title-->
+            <div class="row-blue">
+                <div class="row">
+                    <div class="forecast-title">
+                        <div class="cbforecast">
+                            <h5>5-Day Forecast:</h5>
+                        </div>
+                    </div>
+                </div>
+                <!--5 Day Forecast Days-->
+                <div class="row gutters">
+                    <!--Day 1-->
+                    <div class="col">
+                        <div class="card forecast-day">
+                            <div class="card-body bg-primary">
+                                <p class="day-one-date"></p>
+                                <p class="day-one-icon"></p>
+                                <p class="day-one-temperature"></p>
+                                <p class="day-one-wind"></p>
+                                <p class="day-one-humidity"></p>
+                            </div>                        
+                        </div>    
+                    </div>
+                    <!--Day 2-->
+                    <div class="col">
+                        <div class="card forecast">
+                            <div class="card-body bg-primary">
+                                <p class="day-two-date"></p>
+                                <p class="day-two-icon"></p>
+                                <p class="day-two-temperature"></p>
+                                <p class="day-two-wind"></p>
+                                <p class="day-two-humidity"></p>
                             </div>
                         </div>
                     </div>
-    
-                    <!--5 Day Forecast Title-->
-                    <div class="row-blue">
-                    <div class="row">
-                        <div class="forecast-title">
-                            <div class="cbforecast">
-                                <h5>5-Day Forecast:</h5>
+                    <!-- Day 3-->
+                    <div class="col">
+                        <div class="card forecast">
+                            <div class="card-body bg-primary">
+                                <p class="day-three-date"></p>
+                                <p class="day-three-icon"></p>
+                                <p class="day-three-temperature"></p>
+                                <p class="day-three-wind"></p>
+                                <p class="day-three-humidity"></p>
                             </div>
                         </div>
                     </div>
-    
-                    <!--5 Day Forecast Days-->
-                    <div class="row gutters">
-                        <!--Day 1-->
-                            <div class="col">
-                                <div class="card forecast-day">
-                                    <div class="card-body bg-primary">
-                                        <p class="day-one-date"></p>
-                                        <p class="day-one-icon"></p>
-                                        <p class="day-one-temperature"></p>
-                                        <p class="day-one-humidity"></p>
-                                    </div>
-                        
-                                </div>
-    
+                    <!--Day 4-->
+                    <div class="col">
+                        <div class="card forecast">
+                            <div class="card-body bg-primary">
+                                <p class="day-four-date"></p>
+                                <p class="day-four-icon"></p>
+                                <p class="day-four-temperature"></p>
+                                <p class="day-four-wind"></p>
+                                <p class="day-four-humidity"></p>
                             </div>
-                        <!--Day 2-->
-                            <div class="col">
-                                <div class="card forecast">
-                                    <div class="card-body bg-primary">
-                                        <p class="day-two-date"></p>
-                                        <p class="day-two-icon"></p>
-                                        <p class="day-two-temperature"></p>
-                                        <p class="day-two-humidity"></p>
-                                    </div>
-                                </div>
+                        </div>
+                    </div>                        
+                    <!--Day 5-->
+                    <div class="col">
+                        <div class="card forecast">
+                            <div class="card-body bg-primary">
+                                <p class="day-five-date"></p>
+                                <p class="day-five-icon"></p>
+                                <p class="day-five-temperature"></p>
+                                <p class="day-five-wind"></p>
+                                <p class="day-five-humidity"></p>
                             </div>
-
-                        <!-- Day 3-->
-                            <div class="col">
-                                <div class="card forecast">
-                                    <div class="card-body bg-primary">
-                                        <p class="day-three-date"></p>
-                                        <p class="day-three-icon"></p>
-                                        <p class="day-three-temperature"></p>
-                                        <p class="day-three-humidity"></p>
-                                    </div>
-                                </div>
-                            </div>
-
-                        <!--Day 4-->
-                            <div class="col">
-                                <div class="card forecast">
-                                    <div class="card-body bg-primary">
-                                        <p class="day-four-date"></p>
-                                        <p class="day-four-icon"></p>
-                                        <p class="day-four-temperature"></p>
-                                        <p class="day-four-humidity"></p>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        <!--Day 5-->
-                            <div class="col">
-                                <div class="card forecast">
-                                    <div class="card-body bg-primary">
-                                        <p class="day-five-date"></p>
-                                        <p class="day-five-icon"></p>
-                                        <p class="day-five-temperature"></p>
-                                        <p class="day-five-humidity"></p>
-                                    </div>
-                                </div>
-                            </div>
-                    </div>
-                    </div>
-                </div>  
-         </div>
+                        </div>
+                    </div>   
+                </div>
+            </div>
+        </div>  
         </div>
+    </div>
     </body>
     <script src='./assets/js/script.js'></script>
 </html>
